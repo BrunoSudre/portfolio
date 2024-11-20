@@ -1,0 +1,190 @@
+{
+  "email": "bruninhosudre@gmail.com",
+  "spoken_languages": [
+    "🇨🇦 English",
+    "🇫🇷 French",
+    "🇧🇷 Portuguese"
+  ],
+  "social_media": [
+    {
+      "name": "LinkedIn ",
+      "url": "https://linkedin.com/in/bruno-sudre",
+      "logo_path": "assets/img/linkedin-logo.png"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/BrunoSudre",
+      "logo_path": "assets/img/github-logo.png"
+    },
+    {
+      "name": "Gmail",
+      "url": "mailto:bruninhosudre@gmail.com",
+      "logo_path": "assets/img/gmail-logo.png"
+    }
+  ],
+  "tech_skills": {
+    "programming_languages": [
+      "Python",
+      "Java",
+      "Kotlin"
+    ],
+    "machine_learning": [
+      "PyTorch",
+      "Scikit-Learn",
+      "Neural Networks",
+      "CNN's",
+      "Random Forest",
+      "XGBoost",
+      "Optuna"
+    ],
+    "data_analysis_visualization": [
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Plotly"
+    ],
+    "databases": [
+      "MySQL",
+      "SQLServer"
+    ],
+    "cloud_computing": [
+      "AWS",
+      "GCP"
+    ]
+  },
+  "projects": {
+    "deep_learning": {
+      "category_name": "Deep Learning with PyTorch",
+      "projects": [
+        {
+          "name": "Breast Cancer Detection",
+          "icon": "🔬",
+          "app_path": "pages/iris_app.py",
+          "description": ""
+        },
+        {
+          "name": "Handwritten Recognition",
+          "icon": "✍️",
+          "app_path": "pages/iris_app.py",
+          "description": ""
+        },
+        {
+          "name": "Face Recognition",
+          "icon": "👨‍🦱",
+          "app_path": "pages/iris_app.py",
+          "description": ""
+        }
+      ]
+    },
+    "neural_network": {
+      "category_name": "Neural Networks with Scikit-Learn",
+      "projects": [
+        {
+          "name": "Bike",
+          "icon": "🚴🏼‍♂️",
+          "app_path": "pages/bike_app.py",
+          "description": ""
+        },
+        {
+          "name": "Iris",
+          "icon": "💐",
+          "app_path": "pages/iris_app.py",
+          "description": ""
+        },
+        {
+          "name": "Titanic",
+          "icon": "🛳️",
+          "app_path": "pages/titanic_app.py",
+          "description": ""
+        },
+        {
+          "name": "Loan",
+          "icon": "📋",
+          "app_path": "pages/loan_app.py",
+          "description": ""
+        },
+        {
+          "name": "Boston Housing",
+          "icon": "🏡",
+          "app_path": "pages/boston_housing_app.py",
+          "description": ""
+        }
+      ]
+    },
+    "random_forest": {
+      "category_name": "Random Forests",
+      "projects": []
+    },
+    "xgboost": {
+      "category_name": "XGBoost",
+      "projects": [
+        {
+          "name": "Movies Rating",
+          "icon": "🍿",
+          "app_path": "pages/iris_app.py",
+          "description": ""
+        }
+      ]
+    }
+  },
+  "experiences": [
+    {
+      "company": "Mercado Livre",
+      "role": "Software Engineer",
+      "start_date": "2021-06-21",
+      "end_date": "2023-08-17",
+      "topics": [
+        "Developed and maintained full stack applications using Java, Kotlin, and ReactJS, contributing to high-traffic services.",
+        "Designed and implemented ETL scripts in Python, optimizing data processing workflows.",
+        "Leveraged the Fury Platform for cloud computing, ensuring scalability and reliability of deployed applications.",
+        "Spearheaded the refactoring and migration of legacy projects to modern architectures using Clean Architecture principles.",
+        "Collaborated in Agile Scrum and Git Flow environments, improving project delivery timelines and team coordination.",
+        "Resolved over 200 support tickets monthly through Jira, enhancing customer satisfaction with timely fixes."
+      ]
+    },
+    {
+      "company": "B2W Digital",
+      "role": "Software Engineer",
+      "start_date": "2021-06-21",
+      "end_date": "2023-08-17",
+      "topics": [
+        "Developed back-end solutions in Java and Python, creating optimized scripts to support high-volume e-commerce applications.",
+        "Deployed and managed services on AWS and Google Cloud Platform (GCP).",
+        "Delivered accurate and efficient product search results for major e-commerce brands (Americanas, Submarino), enhancing user experience across multiple platforms."
+      ]
+    },
+    {
+      "company": "Accenture",
+      "role": "Software Developer",
+      "start_date": "2021-06-21",
+      "end_date": "2023-08-17",
+      "topics": [
+        "Engineered back-end solutions in Java with Spring Boot for Santander Bank's Private Banking project, ensuring compliance with security standards.",
+        "Designed and modeled the application database using SQL Server, enhancing data retrieval performance and data integrity."
+      ]
+    }
+  ],
+  "educations": [
+    {
+      "institution_name": "Collège LaSalle",
+      "course_name": "Artificial Intelligence and Machine Learning",
+      "level": "AEC",
+      "start_date": "2023",
+      "end_date": "2025"
+    },
+    {
+      "institution_name": "Paulista School of Informatics and Management",
+      "course_name": "Full Stack Development",
+      "level": "MBA",
+      "start_date": "2021",
+      "end_date": "2022"
+    },
+    {
+      "institution_name": "Federal Institute of Education, Science and Technology of São Paulo",
+      "course_name": "Software Analysis and Development",
+      "level": "Technology",
+      "start_date": "2017",
+      "end_date": "2019"
+    }
+  ]
+}
