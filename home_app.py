@@ -1,13 +1,12 @@
 import base64
+import io
 
 import streamlit as st
 import numpy as np
 import json
 from os import path
 from datetime import date
-import time
-from streamlit_extras.streaming_write import write
-from streamlit_extras.badges import badge
+from PIL import Image
 
 INFO_FILE_PATH = path.join(path.dirname(path.abspath(__file__)), 'info.json')
 ASSETS_DIR_PATH = path.join(path.dirname(path.abspath(__file__)), 'assets')
@@ -116,17 +115,10 @@ def load_skills(tech_skills):
 
 
 def load_intro(info_social_media, spoken_languages):
-    def stream_data():
-        message = "Hi 👋, I'm :orange[Bruno Sudré]!"
-        for word in message.split(" "):
-            yield word + " "
-            time.sleep(0.3)
-
     with st.container():
         left_column, right_column = st.columns(2)
 
         left_column.title("Hi 👋, I'm :orange[Bruno Sudré]!")
-        # st.write_stream(stream_data)
         left_column.write(
             """
                 Final-year AI & Machine Learning student, at Collège LaSalle, with five years of experience as a 
@@ -137,40 +129,55 @@ def load_intro(info_social_media, spoken_languages):
         styled_spoken_languages = " ".join([f":green-background[{sl}]" for sl in spoken_languages])
         left_column.write(f"Languages: {styled_spoken_languages}")
 
-        right_columns = right_column.columns(5)
-        right_columns[1].image(f'{ASSETS_DIR_PATH}/img/bruno_automne.png', caption='', clamp=True, width=200)
-        columns = right_column.columns(5)
-        for i, social_media in enumerate(info_social_media):
-            if i + 1 < len(columns):
-                image = base64.b64encode(open(social_media["logo_path"], "rb").read()).decode()
-                columns[i + 1].markdown(
-                    f"""
-                    <a href="{social_media['url']}">
-                        <img src="data:image/png;base64,{image}" width="40">
-                    </a>
+        with right_column:
+            bruno_img_path = f'{ASSETS_DIR_PATH}/img/bruno_automne.png'
+            bruno_img = Image.open(bruno_img_path)
+            bruno_img.thumbnail((200, 200), Image.Resampling.LANCZOS)
+
+            bruno_img_byte = io.BytesIO()
+            bruno_img.save(bruno_img_byte, format='PNG')
+            bruno_img_byte = bruno_img_byte.getvalue()
+
+            bruno_img = base64.b64encode(bruno_img_byte).decode()
+            st.markdown(
+                f"""
+                    <center>
+                        <img src="data:image/png;base64,{bruno_img}"/>
+                    <center/>
                     """,
-                    unsafe_allow_html=True,
-                )
+                unsafe_allow_html=True
+            )
 
-        right_column.markdown("<br />", unsafe_allow_html=True)
-        with right_column.popover("📄 Download my resume", use_container_width=True):
-            with open(f"{ASSETS_DIR_PATH}/doc/resume-bruno-sudre-en.pdf", "rb") as english_resume:
-                st.download_button(
-                    label="🇨🇦 English",
-                    data=english_resume,
-                    file_name="resume-bruno-sudre-en.pdf",
-                    mime="doc",
-                    use_container_width=True
-                )
+            social_media_html = '<div style="text-align: center; margin-top: 15px;">'
+            for social_media in info_social_media:
+                social_media_img = base64.b64encode(open(social_media["logo_path"], "rb").read()).decode()
+                social_media_html += f"""
+                        <a href="{social_media['url']}" target="_blank" style="text-decoration: none">
+                            <img src="data:image/png;base64,{social_media_img}" width="40" style="margin-left: 30px">
+                        </a>
+                    """
+            social_media_html += '</div>'
 
-            with open(f"{ASSETS_DIR_PATH}/doc/resume-bruno-sudre-en.pdf", "rb") as french_resume:
-                st.download_button(
-                    label="🇫🇷 Français",
-                    data=french_resume,
-                    file_name="resume-bruno-sudre-en.pdf",
-                    mime="doc",
-                    use_container_width=True
-                )
+            st.components.v1.html(social_media_html, height=55)
+
+            with st.popover("📄 Download my resume", use_container_width=True):
+                with open(f"{ASSETS_DIR_PATH}/doc/resume-bruno-sudre-en.pdf", "rb") as english_resume:
+                    st.download_button(
+                        label="🇨🇦 English",
+                        data=english_resume,
+                        file_name="resume-bruno-sudre-en.pdf",
+                        mime="doc",
+                        use_container_width=True
+                    )
+
+                with open(f"{ASSETS_DIR_PATH}/doc/resume-bruno-sudre-en.pdf", "rb") as french_resume:
+                    st.download_button(
+                        label="🇫🇷 Français",
+                        data=french_resume,
+                        file_name="resume-bruno-sudre-en.pdf",
+                        mime="doc",
+                        use_container_width=True
+                    )
 
 
 if __name__ == "__main__":
