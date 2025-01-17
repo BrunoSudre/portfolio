@@ -37,7 +37,7 @@ def load_projects(info_projects):
                         with container:
                             st.page_link(project["app_path"], label=project["name"], icon=project["icon"],
                                          use_container_width=True)
-                            # st.write(project["description"])
+                            st.write(project["description"])
 
 
 def load_experiences(info_experiences):
@@ -82,7 +82,7 @@ def load_certifications():
 
         left_column.write("🧠 **Machine Learning Specialization**")
         left_column.image('./assets/img/machine-learning-specialization-certificate-bruno-sudre.png', caption='',
-                          use_column_width='auto')
+                          use_container_width='auto')
 
         # right_column.write("🇫🇷 TCF Canada - B2")
         # right_column.image('./assets/img/tcf-canada-example.jpg', caption='', use_column_width='auto')

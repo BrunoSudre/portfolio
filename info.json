@@ -57,6 +57,12 @@
       "category_name": "Deep Learning with PyTorch",
       "projects": [
         {
+          "name": "Animal's Hangman",
+          "icon": "🐘",
+          "app_path": "https://animals-hangman.streamlit.app/",
+          "description": "A fun and interactive game where uploaded images of animals are used to create a classic hangman experience!"
+        },
+        {
           "name": "Breast Cancer Detection",
           "icon": "🔬",
           "app_path": "pages/iris_app.py",
@@ -83,7 +89,7 @@
           "name": "Bike",
           "icon": "🚴🏼‍♂️",
           "app_path": "pages/bike_app.py",
-          "description": ""
+          "description": "Predicts bike rental count by hour or day based on the environmental and seasonal settings."
         },
         {
           "name": "Iris",
