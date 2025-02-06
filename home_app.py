@@ -170,11 +170,11 @@ def load_intro(info_social_media, spoken_languages):
                         use_container_width=True
                     )
 
-                with open(f"{ASSETS_DIR_PATH}/doc/resume-bruno-sudre-en.pdf", "rb") as french_resume:
+                with open(f"{ASSETS_DIR_PATH}/doc/resume-bruno-sudre-fr.pdf", "rb") as french_resume:
                     st.download_button(
                         label="🇫🇷 Français",
                         data=french_resume,
-                        file_name="resume-bruno-sudre-en.pdf",
+                        file_name="resume-bruno-sudre-fr.pdf",
                         mime="doc",
                         use_container_width=True
                     )
